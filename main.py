@@ -14,7 +14,7 @@ with sync_playwright() as p:
     url_option_value = urllib.parse.quote(json.dumps(options))
 
     # Connect to AgentGo's distributed browser network
-    server_url = f"ws://any.browsers.live:3000?launch-options={url_option_value}"
+    server_url = f"wss://app.browsers.live?launch-options={url_option_value}"
     browser = p.chromium.connect(server_url)
 
     # Create a new page
